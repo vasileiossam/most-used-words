@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SubtitlesWordCounter": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Dropbox\\subtitles c:\\temp\\output.csv"
+    }
+  }
+}
