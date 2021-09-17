@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NetSpell.SpellChecker;
+using NetSpell.SpellChecker.Dictionary;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,10 +10,27 @@ namespace WordsServices
 {
     public class CounterService : ICounterService
     {
-        private readonly string[] _ignoreList  = 
-            { "hi", "ok", "hey", "it's", "by", "his", "one", "two", "oh", "okay"};
+        private readonly string[] _filipinoList  = { "at" };
 
-        public int CountWords(Dictionary<string, int> counters, string text)
+        private readonly WordDictionary _dictionary = new WordDictionary();
+        private readonly Spelling _spellChecker;
+
+        public CounterService()
+        {
+            _dictionary.DictionaryFile = "en-AU.dic";
+            _dictionary.Initialize();
+            _spellChecker = new Spelling
+            {
+                Dictionary = _dictionary
+            };
+        }
+
+        private bool IsEnglish(string word)
+        {
+            return _spellChecker.TestWord(word);
+        }
+        
+        public int CountWords(Dictionary<string, int> counters, string text, List<string> ignoredWords)
         {
             text = Regex.Replace(text, "[^a-zA-Z% _']", string.Empty);
 
@@ -21,7 +40,18 @@ namespace WordsServices
             foreach(var word in words)
             {
                 var key = word.ToLower().Trim();
-                if (key == string.Empty || key.Length == 1 || _ignoreList.Contains(key)) continue;
+                if (key == string.Empty || key.Length == 1) continue;
+
+                // ignore all English words
+                if (!_filipinoList.Contains(key))
+                {
+                    if (IsEnglish(key) && !ignoredWords.Contains(key))
+                    {
+                        ignoredWords.Add(key);
+                    }
+                    continue;
+                }
+                
 
                 if (counters.ContainsKey(key)) 
                 {

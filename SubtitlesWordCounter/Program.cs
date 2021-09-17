@@ -55,17 +55,21 @@ usage: SubtitlesWordCounter <source directory> <output file>
             var totalWords = 0;
             var counters = new Dictionary<string, int>();
             var counterService = serviceProvider.GetService<ICounterService>();
-     
+            var ignoredWords = new List<string>();
+
             foreach (var file in files)
             {
                 Console.Write($"Counting words in '{Path.GetFileName(file)}'...");
-                totalWords = counterService.CountWords(counters, File.ReadAllText(file));
+
+                totalWords = counterService.CountWords(counters, File.ReadAllText(file), ignoredWords);
+
                 Console.WriteLine($"found {totalWords} words!");
             }
 
             if (totalWords > 0)
             {
                 counterService.CreateCsv(counters, outputFile);
+                File.WriteAllLines(outputFile+ "-ignoredWords.txt", ignoredWords);
                 Console.WriteLine($"Created file {outputFile}.");
             }
         }

@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NetSpell\src\NetSpell.SpellChecker\NetSpell.SpellChecker.csproj" />
+  </ItemGroup>
+
 </Project>

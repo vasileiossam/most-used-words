@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30524.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSpell.SpellChecker", "NetSpell.SpellChecker\NetSpell.SpellChecker.csproj", "{A426EE0B-E52E-4D74-AF24-06797142D7B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSpell.Tests", "NetSpell.Tests\NetSpell.Tests.csproj", "{FA92DDBE-81AD-4F8A-9941-300839C15727}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6ABA2D39-2989-4F2D-A98B-AB1765929272}"
+	ProjectSection(SolutionItems) = preProject
+		NetSpell.build = NetSpell.build
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A426EE0B-E52E-4D74-AF24-06797142D7B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA92DDBE-81AD-4F8A-9941-300839C15727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA92DDBE-81AD-4F8A-9941-300839C15727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA92DDBE-81AD-4F8A-9941-300839C15727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA92DDBE-81AD-4F8A-9941-300839C15727}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9610995B-335C-4520-90FF-73112915B682}
+	EndGlobalSection
+EndGlobal

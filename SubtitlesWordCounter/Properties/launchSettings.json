@@ -2,7 +2,7 @@
   "profiles": {
     "SubtitlesWordCounter": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Dropbox\\subtitles c:\\temp\\output.csv"
+      "commandLineArgs": "C:\\Dropbox\\dev\\subtitles c:\\temp\\output.csv"
     }
   }
 }
