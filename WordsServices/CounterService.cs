@@ -8,7 +8,8 @@ namespace WordsServices
 {
     public class CounterService : ICounterService
     {
-        private string[] _ignoreList  = { "hi", "ok", "hey", "it's", "by", "his", "one", "two", "oh", "okay"};
+        private readonly string[] _ignoreList  = 
+            { "hi", "ok", "hey", "it's", "by", "his", "one", "two", "oh", "okay"};
 
         public int CountWords(Dictionary<string, int> counters, string text)
         {
@@ -41,11 +42,14 @@ namespace WordsServices
         public void CreateCsv(Dictionary<string, int> counters, string pathName)
         {
             var total = counters.Sum(x => x.Value);
+            var counter = 1;
 
-            var csv = "Word,Count,Percentage\n" +
+            var csv = "#,Word,Count,Percentage\n" +
                 String.Join(
                     Environment.NewLine,
-                    counters.OrderByDescending(x => x.Value).Select(d => $"{d.Key},{d.Value},{(double)d.Value/total*100}")
+                    counters
+                        .OrderByDescending(x => x.Value)
+                        .Select(d => $"{counter++},{d.Key},{d.Value},{Math.Round((double)d.Value/total*100, 2)}")
                 ); 
 
             File.WriteAllText(pathName, csv);
