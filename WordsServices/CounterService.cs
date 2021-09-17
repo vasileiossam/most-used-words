@@ -10,7 +10,8 @@ namespace WordsServices
 {
     public class CounterService : ICounterService
     {
-        private readonly string[] _filipinoList  = { "at" };
+        private readonly string[] _filipinoList  = { "at", "pa", "ale", "bag", "din", "man", "may"};
+        private readonly string[] _ignoreList = { "bfsfnarabic", "maria"};
 
         private readonly WordDictionary _dictionary = new WordDictionary();
         private readonly Spelling _spellChecker;
@@ -40,12 +41,12 @@ namespace WordsServices
             foreach(var word in words)
             {
                 var key = word.ToLower().Trim();
-                if (key == string.Empty || key.Length == 1) continue;
+                if (key == string.Empty || key.Length == 1 || _ignoreList.Contains(key)) continue;
 
                 // ignore all English words
-                if (!_filipinoList.Contains(key))
+                if (IsEnglish(key) && !_filipinoList.Contains(key))
                 {
-                    if (IsEnglish(key) && !ignoredWords.Contains(key))
+                    if (!ignoredWords.Contains(key))
                     {
                         ignoredWords.Add(key);
                     }

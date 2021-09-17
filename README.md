@@ -2,7 +2,8 @@
 
 ### SubtitlesWordCounter
 
-Creates a CSV file with the most frequently used words in subtitle files.
+Creates a CSV file with the most frequently used words in subtitle files for non english languages.
+It ignores English words using [NetSpell](https://github.com/AiimiLtd/NetSpell).
 
 ```
 usage: SubtitlesWordCounter <source directory> <output file>
@@ -11,6 +12,6 @@ usage: SubtitlesWordCounter <source directory> <output file>
     output file     : .csv path name
 ```
 #### Examples
-Top 1000 Filipino words based on 170 subtitle files from www.opensubtitles.org
 
- 
+* [Top 500 Filipino words](./filipino-500-most-used-words.md)  
+Based on 170 subtitle files from www.opensubtitles.org
