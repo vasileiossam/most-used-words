@@ -13,5 +13,5 @@ usage: SubtitlesWordCounter <source directory> <output file>
 ```
 #### Examples
 
-* [Top 500 Filipino words](./filipino-500-most-used-words.md)  
+* [Top 500 Filipino words](filipino-500-most-used-words.md)  
 Based on 170 subtitles files from www.opensubtitles.org
