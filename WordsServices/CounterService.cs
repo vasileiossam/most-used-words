@@ -11,7 +11,8 @@ namespace WordsServices
     public class CounterService : ICounterService
     {
         private readonly string[] _filipinoList  = { "at", "pa", "ale", "bag", "din", "man", "may"};
-        private readonly string[] _ignoreList = { "bfsfnarabic", "maria"};
+        private readonly string[] _ignoreList = { "bfsfnarabic", "maria", "steve", "colorffat", "okey", "mr", 
+            "pedro","ok", "telepono", "colorffhindi","colorffang","itofont" };
 
         private readonly WordDictionary _dictionary = new WordDictionary();
         private readonly Spelling _spellChecker;
@@ -80,7 +81,7 @@ namespace WordsServices
                     Environment.NewLine,
                     counters
                         .OrderByDescending(x => x.Value)
-                        .Select(d => $"{counter++},{d.Key},{d.Value},{Math.Round((double)d.Value/total*100, 2)}")
+                        .Select(d => $"{counter++},{d.Key},{d.Value},{Math.Round((double)d.Value/total*100, 2):0.00}")
                 ); 
 
             File.WriteAllText(pathName, csv);
