@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WikipediaWordCounter": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Dropbox\\dev\\Wikipedia\\tagalog\\tlwiki-20210901-pages-meta-current.xml c:\\temp\\output-wiki.csv"
+    }
+  }
+}

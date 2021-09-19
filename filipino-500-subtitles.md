@@ -1,5 +1,5 @@
 # Top 500 Filipino words
-Based on 170 subtitles files from www.opensubtitles.org   
+Most common Filipino words based on 170 subtitles files from www.opensubtitles.org   
 Represent about 71% of the total words.
 
 |#  |Word         |Count|Percentage|
