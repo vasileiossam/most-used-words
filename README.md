@@ -1,4 +1,15 @@
-# most-used-words
+# mos
+
+### Filipino 600 most common words
+This is an [Anki deck](./Anki/Filipino&#32;most&#32;common&#32;words&#32;based&#32;on&#32;opensubtitles.org.apkg) of about 600 most frequently used words in Filipino based on opensubtitles.org. 
+Compiled using the tool [here.](https://github.com/vasileiossam/most-used-words
+)
+
+The deck is organized in sub-decks of 50 cards each. 
+
+* About 250 cards and their audio are taken from this [anki deck](https://ankiweb.net/shared/info/40587864).
+* https://www.tagalog.com/ was used to get translations from Filipino to English.
+
 
 ### SubtitlesWordCounter
 
